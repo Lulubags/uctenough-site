@@ -1,80 +1,67 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Unified Campus Team – #UCTEnoughNow</title>
+  <title>UCT Pledge Wall</title>
   <style>
     body {
       font-family: 'Helvetica Neue', sans-serif;
-      margin: 0;
-      padding: 0;
       background-color: #f1effa;
-      color: #333;
+      padding: 20px;
+      margin: 0;
     }
     header {
+      text-align: center;
       background-color: #5e2b97;
-      padding: 20px;
-      text-align: center;
       color: white;
-    }
-    nav {
-      text-align: center;
-      background-color: #d3c1ed;
-      padding: 10px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #5e2b97;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
+      padding: 20px;
     }
     img.logo {
       height: 80px;
       display: block;
       margin: 20px auto;
     }
-    iframe {
+    form {
+      max-width: 500px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input, textarea, button {
       width: 100%;
-      height: 700px;
-      border: none;
-    }
-    .candidate {
-      margin-bottom: 20px;
       padding: 10px;
-      background-color: white;
-      border-left: 5px solid #5e2b97;
-      border-radius: 5px;
+      margin: 10px 0;
+      font-size: 16px;
     }
-    .candidate h3 {
-      margin: 0;
-      color: #5e2b97;
+    .pledges {
+      max-width: 600px;
+      margin: 30px auto;
+    }
+    .pledge {
+      background: white;
+      border-left: 5px solid #5e2b97;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>#UCTEnoughNow Campaign</h1>
-    <p>Powered by the Unified Campus Team</p>
+    <img src="logo.png" alt="UCT Logo" class="logo" />
+    <h1>#UCTEnoughNow Pledge Wall</h1>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="pledge.html">Pledge Wall</a>
-    <a href="candidates.html">Meet the Candidates</a>
-  </nav>
 
-<div class="container">
-  <img src="2.png" alt="UCT Logo" class="logo">
-  <h2>Our Mission</h2>
-  <p>The Unified Campus Team is a student-led movement standing against gender-based violence and advocating for a safer, more united campus. Our campaign – #UCTEnoughNow – is about real leadership, real action, and real change.</p>
-  <p>Support our candidates. Spread the word. Make your pledge. Vote UCT.</p>
-  <a href="pledge.html"><strong>Make Your Pledge Now</strong></a>
-</div>
+  <form id="pledgeForm">
+    <input type="text" id="name" placeholder="Your name (optional)">
+    <textarea id="pledge" placeholder="Enter your pledge here..." required></textarea>
+    <button type="submit">Submit Pledge</button>
+  </form>
 
-</div>
+  <div class="pledges" id="pledgeList"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
